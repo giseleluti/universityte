@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>University Tech</title>
+</head>
+
+
+<body>
+
+     <header>
+        <div class="title">
+            <h2>Sistema de matrículas </h2>
+        </div>
+        <div class="banner">
+            <img src="https://images.contentstack.io/v3/assets/blt45c082eaf9747747/bltbcca43584b660977/5de0b6aa703bd50385f981ad/Header-5.jpg?width=1200&height=630&fit=crop"
+                alt="">
+        </div>
+    </header>
+<p> Seja bem-vindo ao sistema de cadastro e matrícula de alunos - Universidade Tech. <br>
+Escolha sua opção no menu: 
+</p>
+<br>
+
+<details class="collapse">
+  <summary class="cadastro">Cadastrar um aluno</summary>  
+<div class="description">Realize aqui o cadastro dos alunos: <br>
+</div>
+    <section class="newItem">
+        <input type="text" id="newNome" placeholder="Nome completo:">
+        <input type="text" id="newCpf" placeholder="CPF:">
+        <input type="text" id="newCelular" placeholder="Celular:">
+        <input type="text" id="newEndereco" placeholder="Endereço:">
+        <input type="text" id="newCep" placeholder="CEP:">
+        <input type="text" id="newCidade" placeholder="Cidade:">
+        <input type="text" id="newUf" placeholder="UF:">
+
+        <span onclick="newItem()" class="addBtn">Cadastrar</span>
+    </section>
+</details>
+
+<details class="collapse">
+
+  <summary class="lista">Lista de alunos cadastrados</summary>  
+<div class="description">Visualize aqui a lista de alunos:<br>
+</div>
+
+    <section class="items">
+        <table id="myTable">
+            <tr>
+                <th>Nome completo</th>
+                <th>CPF</th>
+                <th>Celular</th>
+                <th>Endereço</th>
+                <th>CEP</th>
+                <th>Cidade</th>
+                <th>UF</th>
+                <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
+            </tr>
+        </table>
+    </section>
+</details>
+
+<details class="collapse">
+  <summary class="matricula">Matricular um aluno</summary>  
+<div class="description">Realize aqui a matrícula dos alunos por CPF: <br>
+</div>
+    <section class="newMatricula">
+        <input type="text" id="newCpf" placeholder="CPF:">
+        <input type="text" id="newCodigoCurso" placeholder="Código Curso:">
+        <input type="text" id="newCurso" placeholder="Curso:">
+        <input type="text" id="newCodigoDisciplina" placeholder="Código disciplina:">
+        <input type="text" id="newDisciplina" placeholder="Disciplina:">
+        <input type="text" id="newCreditos" placeholder="Créditos:">
+
+        <span onclick="newMatricula()" class="addBtn">Matricular</span>
+    </section>
+</details>
+
+<details class="collapse">
+
+  <summary class="lista">Lista  matrícula</summary>  
+<div class="description">Visualize aqui a lista de matrícula:<br>
+</div>
+
+    <section class="items">
+        <table id="matriculaTable">
+            <tr>
+                <th>CPF</th>
+                <th>Código curso</th>
+                <th>Curso</th>
+                <th>Codigo disciplina</th>
+                <th>Disciplina</th>
+                <th>Créditos</th>
+                <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
+            </tr>
+        </table>
+    </section>
+</details>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
+
+
