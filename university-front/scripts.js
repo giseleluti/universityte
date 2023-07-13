@@ -71,10 +71,10 @@ const removeElement = () => {
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function () {
       let div = this.parentElement.parentElement;
-      const nomeIten = div.getElementsByTagName('td')[0].innerHTML
+      const nomeIten = div.getElementsByTagName('td')[1].innerHTML
       if (confirm("Você tem certeza que deseja excluir? Isso também deleta os cursos matriculados.")) {
         div.remove()
-        deleteItem(nomeItem)
+        deleteItem(nomeIten)
         alert("Aluno removido!")
       }
     }
