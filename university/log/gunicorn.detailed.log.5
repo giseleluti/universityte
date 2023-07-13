@@ -1,79 +1,53 @@
-[2023-07-09 08:29:14,052] INFO _log() L224   * Running on all addresses (0.0.0.0)
+[2023-07-11 09:33:25,999] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 09:33:25] "GET /openapi/static/images/swagger.svg HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 09:33:26,056] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 09:33:26] "GET /openapi/static/images/redoc.svg HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 09:33:26,057] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 09:33:26] "GET /openapi/static/images/rapidoc.svg HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 09:33:26,196] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 09:33:26] "GET /openapi/static/images/apidoc.svg HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 09:33:48,109] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 09:33:48] "[33mGET /openapi/aluno HTTP/1.1[0m" 404 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 09:34:09,300] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 09:34:09] "[33mGET /openapi/aluno/cadastro HTTP/1.1[0m" 404 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 09:35:52,922] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 09:35:52] "[33mGET /home/aluno/cadastro HTTP/1.1[0m" 404 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 10:02:00,238] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 10:02:00] "GET /aluno/listagem HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 10:14:48,256] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 10:14:48] "GET /aluno/listagem HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 10:15:42,091] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 10:15:42] "GET /aluno/listagem HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 10:16:42,574] INFO _log() L224   * Running on all addresses (0.0.0.0)
    WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5000
  * Running on http://192.168.28.49:5000 (Press CTRL+C to quit) - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-07-09 08:29:42,270] INFO _log() L224  127.0.0.1 - - [09/Jul/2023 08:29:42] "POST /aluno/cadastro HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-07-09 08:30:49,641] INFO _log() L224  127.0.0.1 - - [09/Jul/2023 08:30:49] "POST /aluno/cadastro HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-07-09 08:31:14,725] INFO _log() L224  127.0.0.1 - - [09/Jul/2023 08:31:14] "POST /curso/matricula HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-07-09 08:31:39,057] ERROR log_exception() L1449 Exception on /curso/matricula [POST] - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\flask\app.py L1449
-Traceback (most recent call last):
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
-    self.dialect.do_execute(
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.IntegrityError: UNIQUE constraint failed: curso.cpf
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\flask\app.py", line 1517, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\flask\app.py", line 1503, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\flask_openapi3\scaffold.py", line 191, in wrapper
-    resp = _do_wrapper(
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\flask_openapi3\do_wrapper.py", line 135, in _do_wrapper
-    response = func(**request_kwargs)
-  File "C:\Users\gipri\PycharmProjects\university\app.py", line 132, in add_matricula
-    session.commit()
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
-    self._transaction.commit(_to_root=self.future)
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
-    self._prepare_impl()
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
-    self.session.flush()
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3386, in flush
-    self._flush(objects)
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3526, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
-    compat.raise_(
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\util\compat.py", line 208, in raise_
-    raise exception
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3486, in _flush
-    flush_context.execute()
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
-    rec.execute(self)
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
-    util.preloaded.orm_persistence.save_obj(
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
-    _emit_insert_statements(
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1238, in _emit_insert_statements
-    result = connection._execute_20(
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
-    return meth(self, args_10style, kwargs_10style, execution_options)
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 333, in _execute_on_connection
-    return connection._execute_clauseelement(
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
-    ret = self._execute_context(
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
-    self._handle_dbapi_exception(
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
-    util.raise_(
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\util\compat.py", line 208, in raise_
-    raise exception
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
-    self.dialect.do_execute(
-  File "C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: curso.cpf
-[SQL: INSERT INTO curso (cpf, codigo_curso, curso, codigo_disc, disciplina, creditos, data_matricula, aluno_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)]
-[parameters: ('123.332.434-20', 11111, 'Jornalissmo', 33333333, 'fotografia', 8, '2023-07-09 08:29:13.892704', 1)]
-(Background on this error at: https://sqlalche.me/e/14/gkpj)
-[2023-07-09 08:31:39,089] INFO _log() L224  127.0.0.1 - - [09/Jul/2023 08:31:39] "[35m[1mPOST /curso/matricula HTTP/1.1[0m" 500 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 10:25:29,306] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.28.49:5000 (Press CTRL+C to quit) - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 10:25:52,861] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 10:25:52] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 10:46:50,911] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 10:46:50] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 11:00:58,924] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 11:00:58] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 12:30:01,611] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 12:30:01] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 18:10:03,279] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.28.49:5000 (Press CTRL+C to quit) - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 18:11:03,904] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.28.49:5000 (Press CTRL+C to quit) - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 18:11:46,246] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 18:11:46] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 18:15:29,533] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 18:15:29] "[33mGET /produtos HTTP/1.1[0m" 404 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 18:15:48,458] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 18:15:48] "[33mPOST /produto HTTP/1.1[0m" 404 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 18:16:45,745] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 18:16:45] "[33mPOST /produto HTTP/1.1[0m" 404 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 18:17:06,770] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 18:17:06] "[33mOPTIONS /produto?nome=MAÇA HTTP/1.1[0m" 404 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 18:17:17,132] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 18:17:17] "[33mGET /produtos HTTP/1.1[0m" 404 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 19:36:46,472] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 19:36:46] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 19:58:40,505] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 19:58:40] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 20:00:53,573] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 20:00:53] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 20:08:44,658] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 20:08:44] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 20:08:54,874] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 20:08:54] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 20:12:36,518] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 20:12:36] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 20:13:58,382] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 20:13:58] "OPTIONS /aluno?cpf=Luciana%20da%20Silva%20Santos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 20:13:58,413] WARNING del_aluno() L105  Erro ao excluir aluno #'Luciana da Silva Santos', Aluno não encontrado na base :/ - call_trace=C:\Users\gipri\PycharmProjects\university\app.py L105 
+[2023-07-11 20:13:58,413] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 20:13:58] "[33mDELETE /aluno?cpf=Luciana%20da%20Silva%20Santos HTTP/1.1[0m" 404 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 20:14:09,095] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 20:14:09] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 20:30:10,932] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 20:30:10] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 20:38:05,026] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 20:38:05] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 20:38:15,133] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 20:38:15] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 20:41:58,031] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 20:41:58] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 20:42:18,382] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 20:42:18] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 20:42:49,889] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 20:42:49] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-07-11 20:43:18,904] INFO _log() L224  127.0.0.1 - - [11/Jul/2023 20:43:18] "GET /alunos HTTP/1.1" 200 - - call_trace=C:\Users\gipri\PycharmProjects\university\venv\lib\site-packages\werkzeug\_internal.py L224 

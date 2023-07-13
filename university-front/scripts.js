@@ -22,7 +22,7 @@ const postItem = async (inputNome, inputCpf, inputCelular, inputEndereco, inputC
   formData.append('endereco', inputEndereco);
   formData.append('cep', inputCep);
   formData.append('cidade', inputCidade);
-  formData.append('uf', inputuf);
+  formData.append('uf', inputUf);
 
   let url = 'http://127.0.0.1:5000/aluno';
   fetch(url, {
@@ -46,13 +46,51 @@ const newItem = () => {
 
   if (inputCpf === '') {
     alert("O campo CPF é obrigatório!");
-  } else if (isNaN(inputCelular) || isNaN(inputCpf)) {
-    alert("Os campos celular e CPF precisam ser números!");
+  } else if (isNaN(inputCelular)) {
+    alert("O campo celular precisa ser números!");
   } else {
     insertList(inputNome, inputCpf, inputCelular, inputEndereco, inputCep, inputCidade, inputUf)
     postItem(inputNome, inputCpf, inputCelular, inputEndereco, inputCep, inputCidade, inputUf)
     alert("Aluno cadastrado!")
   }
+}
+
+const insertButton = (parent) => {
+  let span = document.createElement("span");
+  let txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  parent.appendChild(span);
+}
+
+
+const removeElement = () => {
+  let close = document.getElementsByClassName("close");
+  var table = document.getElementById('myTable');
+  let i;
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function () {
+      let div = this.parentElement.parentElement;
+      const nomeIten = div.getElementsByTagName('td')[0].innerHTML
+      if (confirm("Você tem certeza que deseja excluir? Isso também deleta os cursos matriculados.")) {
+        div.remove()
+        deleteItem(nomeItem)
+        alert("Aluno removido!")
+      }
+    }
+  }
+}
+
+const deleteItem = (item) => {
+  console.log(item)
+  let url = 'http://127.0.0.1:5000/aluno?cpf=' + item;
+  fetch(url, {
+    method: 'delete'
+  })
+    .then((response) => response.json())
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 }
 
 const insertList = (nome, cpf, celular, endereco, cep, cidade, uf) => {
@@ -76,9 +114,9 @@ const insertList = (nome, cpf, celular, endereco, cep, cidade, uf) => {
   removeElement()
 }
 
-const postMatricula = async (inputCpf, inputCodigoCurso,  inputCurso, inputCodigoDisciplina, inputDisciplina, inputCreditos) => {
+const postMatricula = async (inputCpfMat, inputCodigoCurso,  inputCurso, inputCodigoDisciplina, inputDisciplina, inputCreditos) => {
   const formData = new FormData();
-  formData.append('cpf', inputCpf);
+  formData.append('cpfMat', inputCpfMat);
   formData.append('codigoCurso', inputCodigoCurso);
   formData.append('curso', inputCurso);
   formData.append('codigoDisciplina', inputCodigoDisciplina);
@@ -97,28 +135,28 @@ const postMatricula = async (inputCpf, inputCodigoCurso,  inputCurso, inputCodig
 }
 
 const newMatricula = () => {
-  let inputCpf = document.getElementById("newCpf").value;
+  let inputCpfMat = document.getElementById("newCpfMat").value;
   let inputCodigoCurso = document.getElementById("newCodigoCurso").value;
   let inputCurso = document.getElementById("newCurso").value;
   let inputCodigoDisciplina = document.getElementById("newCodigoDisciplina").value;
   let inputDisciplina = document.getElementById("newDisciplina").value;
   let inputCreditos = document.getElementById("newCreditos").value;
 
-  if (inputCpf === '' && inputCurso === '' && inputDisciplina === '' && inputCreditos === '') {
+  if (inputCpfMat === '' && inputCurso === '' && inputDisciplina === '' && inputCreditos === '') {
     alert("Os campos CPF, curso, disciplina e créditos  são obrigatórios!");
-  } else if (isNaN(inputCodigoCurso) || isNaN(inputCpf) || isNaN(inputCodigoDisciplina) || isNaN(inputCreditos)) {
-    alert("Os campos código disciplina, código curso, créditos e CPF precisam ser números!");
+  } else if (isNaN(inputCodigoCurso) || isNaN(inputCodigoDisciplina) || isNaN(inputCreditos)) {
+    alert("Os campos código disciplina, código curso e créditos precisam ser números!");
   } else {
-    insertMatricula(inputCpf, inputCodigoCurso,  inputCurso, inputCodigoDisciplina, inputDisciplina, inputCreditos)
-    postMatricula(inputCpf, inputCodigoCurso,  inputCurso, inputCodigoDisciplina, inputDisciplina, inputCreditos)
+    insertMatricula(inputCpfMat, inputCodigoCurso,  inputCurso, inputCodigoDisciplina, inputDisciplina, inputCreditos)
+    postMatricula(inputCpfMat, inputCodigoCurso,  inputCurso, inputCodigoDisciplina, inputDisciplina, inputCreditos)
     alert("Aluno matriculado no curso!")
   }
 }
 
 
 
-const insertMatricula = (cpf, codicoCurso, curso, codigoDisciplina, disciplina, creditos) => {
-  var item = [cpf, codicoCurso, curso, codigoDisciplina, disciplina, creditos]
+const insertMatricula = (cpfMat, codicoCurso, curso, codigoDisciplina, disciplina, creditos) => {
+  var item = [cpfMat, codicoCurso, curso, codigoDisciplina, disciplina, creditos]
   var table = document.getElementById('matriculaTable');
   var row = table.insertRow();
 
@@ -127,7 +165,7 @@ const insertMatricula = (cpf, codicoCurso, curso, codigoDisciplina, disciplina, 
     cel.textContent = item[i];
   }
   insertButton(row.insertCell(-1))
-  document.getElementById("newCpf").value = "";
+  document.getElementById("newCpfMat").value = "";
   document.getElementById("newCodigoCurso").value = "";
   document.getElementById("newCurso").value = "";
   document.getElementById("newCodigoDisciplina").value = "";
@@ -135,41 +173,4 @@ const insertMatricula = (cpf, codicoCurso, curso, codigoDisciplina, disciplina, 
   document.getElementById("newCreditos").value = "";
 
   removeElement()
-}
-const insertButton = (parent) => {
-  let span = document.createElement("span");
-  let txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  parent.appendChild(span);
-}
-
-
-const removeElement = () => {
-  let close = document.getElementsByClassName("close");
-  var table = document.getElementById('myTable');
-  let i;
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function () {
-      let div = this.parentElement.parentElement;
-      const nome = div.getElementsByTagName('td')[0].innerHTML
-      if (confirm("Você tem certeza?")) {
-        div.remove()
-        deleteItem(nome)
-        alert("Removido!")
-      }
-    }
-  }
-}
-
-const deleteItem = (item) => {
-  console.log(item)
-  let url = 'http://127.0.0.1:5000/aluno?cpf=' + item;
-  fetch(url, {
-    method: 'delete'
-  })
-    .then((response) => response.json())
-    .catch((error) => {
-      console.error('Error:', error);
-    });
 }

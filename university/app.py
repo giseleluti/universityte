@@ -74,7 +74,8 @@ def get_aluno():
 def busca_aluno(query: AlunoGetSchema):
     aluno_cpf = query.cpf
     aluno_nome = query.nome
-    logger.debug(f"Buscando dados sobre aluno #{aluno_cpf}")
+
+    logger.debug(f"Buscando         dados sobre aluno #{aluno_cpf}")
     session = Session()
     aluno = session.query(Aluno).filter(Aluno.cpf == aluno_cpf).first()
 
@@ -109,7 +110,6 @@ def del_aluno(query: AlunoGetSchema):
 @app.post('/curso', tags=[curso_tag],
           responses={"200": AlunoViewSchema, "404": ErrorViewSchema})
 def add_matricula(form: CursoSchema):
-    aluno_id = form.id
     aluno_cpf = form.cpf
     curso = Curso(
         cpf=form.cpf,

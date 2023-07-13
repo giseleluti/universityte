@@ -19,7 +19,6 @@ class AlunoGetSchema(BaseModel):
     cpf: str = "123.332.434-20"
     nome: str = "Luciana da Silva Santos"
 
-
 class ListagemAlunoSchema(BaseModel):
     alunos: List[AlunoSchema]
 
